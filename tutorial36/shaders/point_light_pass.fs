@@ -37,7 +37,6 @@ struct SpotLight
 uniform sampler2D gPositionMap;
 uniform sampler2D gColorMap;
 uniform sampler2D gNormalMap;
-uniform DirectionalLight gDirectionalLight;
 uniform PointLight gPointLight;
 uniform SpotLight gSpotLight;
 uniform vec3 gEyeWorldPos;
@@ -70,14 +69,6 @@ vec4 CalcLightInternal(BaseLight Light,
     }
 
     return (AmbientColor + DiffuseColor + SpecularColor);
-}
-
-vec4 CalcDirectionalLight(vec3 WorldPos, vec3 Normal)
-{
-    return CalcLightInternal(gDirectionalLight.Base,
-							 gDirectionalLight.Direction,
-							 WorldPos,
-							 Normal);
 }
 
 vec4 CalcPointLight(vec3 WorldPos, vec3 Normal)

@@ -36,7 +36,7 @@
 static float FieldDepth = 10.0f;
 
 class Tutorial22 : public ICallbacks
-{
+{ 
 public:
 
     Tutorial22()

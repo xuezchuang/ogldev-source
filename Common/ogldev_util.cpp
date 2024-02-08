@@ -87,15 +87,15 @@ long long GetCurrentTimeMillis()
     return ret;
 #endif    
 }
-
-#ifdef WIN32
-#if _MSC_VER != 1800
-float fmax(float a, float b)
-{
-    if (a > b)
-        return a;
-    else
-        return b;
-}
-#endif
-#endif
+//
+//#ifdef WIN32
+//#if _MSC_VER != 1800
+//float fmax(float a, float b)
+//{
+//    if (a > b)
+//        return a;
+//    else
+//        return b;
+//}
+//#endif
+//#endif

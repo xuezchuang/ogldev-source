@@ -38,8 +38,6 @@ uniform sampler2D gPositionMap;
 uniform sampler2D gColorMap;
 uniform sampler2D gNormalMap;
 uniform DirectionalLight gDirectionalLight;
-uniform PointLight gPointLight;
-uniform SpotLight gSpotLight;
 uniform vec3 gEyeWorldPos;
 uniform float gMatSpecularIntensity;
 uniform float gSpecularPower;
@@ -79,24 +77,6 @@ vec4 CalcDirectionalLight(vec3 WorldPos, vec3 Normal)
 							 WorldPos,
 							 Normal);
 }
-
-vec4 CalcPointLight(vec3 WorldPos, vec3 Normal)
-{
-    vec3 LightDirection = WorldPos - gPointLight.Position;
-    float Distance = length(LightDirection);
-    LightDirection = normalize(LightDirection);
-
-    vec4 Color = CalcLightInternal(gPointLight.Base, LightDirection, WorldPos, Normal);
-
-    float Attenuation =  gPointLight.Atten.Constant +
-                         gPointLight.Atten.Linear * Distance +
-                         gPointLight.Atten.Exp * Distance * Distance;
-
-    Attenuation = max(1.0, Attenuation);
-
-    return Color / Attenuation;
-}
-
 
 vec2 CalcTexCoord()
 {

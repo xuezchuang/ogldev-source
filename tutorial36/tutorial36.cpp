@@ -143,7 +143,7 @@ public:
         
         BeginLightPasses();
 
-        DSPointLightsPass();
+        //DSPointLightsPass();
 
 		DSDirectionalLightPass();
                

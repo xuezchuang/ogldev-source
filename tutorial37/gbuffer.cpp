@@ -130,7 +130,7 @@ void GBuffer::BindForLightPass()
 		glActiveTexture(GL_TEXTURE0 + i);		
 		glBindTexture(GL_TEXTURE_2D, m_textures[GBUFFER_TEXTURE_TYPE_POSITION + i]);
 	}
-}
+} 
 
 
 void GBuffer::BindForFinalPass()

@@ -97,7 +97,8 @@ void OgldevBackendSwapBuffers()
             GLFWBackendSwapBuffers();
             break;
         default:
-            assert(0);
+            //assert(0);
+			break;
     }    
 }
 

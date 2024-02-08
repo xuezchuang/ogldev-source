@@ -99,7 +99,8 @@ static OGLDEV_MOUSE GLUTMouseToOGLDEVMouse(uint Button)
     case GLUT_MIDDLE_BUTTON:
             return OGLDEV_MOUSE_BUTTON_MIDDLE;
     default:
-            OGLDEV_ERROR("Unimplemented GLUT mouse button");
+            //OGLDEV_ERROR("Unimplemented GLUT mouse button");
+		break;
     }
 
     return OGLDEV_MOUSE_UNDEFINED;
@@ -124,7 +125,7 @@ static void KeyboardCB(unsigned char Key, int x, int y)
 		s_pCallbacks->KeyboardCB(OgldevKey);
 	}
 	else {
-		OGLDEV_ERROR("Unimplemented GLUT key");
+		//OGLDEV_ERROR("Unimplemented GLUT key");
 	}
 
 }
